@@ -8,17 +8,10 @@ public class MainApp {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Введите число:");
         int number = scanner.nextInt();
-        int lastnum;
         int count = 0;
-        while (true) {
-            lastnum = number % 10;
-            if (lastnum == 0) {
-                count++;
-                number = number / 10;
-            }
-            else {
-                break;
-            }
+        while (number % 10 == 0) {
+            count++;
+            number /= 10;
         }
         System.out.println("Количество нулей в конце = " + count);
         // Second task
