@@ -6,9 +6,9 @@ public class HT5 {
         //1) Дан одноместный массив целых чисел. Необходимо получить второй,
         // который будут зеркальной копией первого (элементы наоборот - с последнего до первого)
         int[] firstArray = {1,6,8,2,9};
-        int[] secondArray = new int[5];
-        for (int i=0, j = secondArray.length - 1; firstArray.length>i; i++, j--) {
-            secondArray[j] = firstArray[i];
+        int[] secondArray = new int[firstArray.length];
+        for (int i=0; firstArray.length>i; i++) {
+            secondArray[firstArray.length-i-1] = firstArray[i];
         }
         System.out.println(Arrays.toString(secondArray));
         //2) Дан массив целых чисел. Необходимо удалить элемент, расположенный по середине.
