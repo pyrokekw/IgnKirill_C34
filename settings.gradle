@@ -1,5 +1,8 @@
 rootProject.name = 'IgnKirill_C34'
 include 'hometask2'
 include 'hometask5'
+include 'hometask6'
 include 'hometask7'
+
+
 

@@ -1,6 +1,7 @@
 import java.util.Arrays;
 
-public class MainApp {
+public class HT5 {
+
     public static void main(String[] args) {
         //1) Дан одноместный массив целых чисел. Необходимо получить второй,
         // который будут зеркальной копией первого (элементы наоборот - с последнего до первого)
