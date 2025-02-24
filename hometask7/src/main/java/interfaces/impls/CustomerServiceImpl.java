@@ -23,8 +23,8 @@ public class CustomerServiceImpl implements CustomerService {
     @Override
     public void customService(User user) {
         receiptOrder.order(user);
-        saveOrder.isSaved();
+        saveOrder.orderSaved();
         cookingService.startCooking(user);
-        deliveryService.deliveryToHome(user);
+        deliveryService.deliveryOrder(user);
     }
 }

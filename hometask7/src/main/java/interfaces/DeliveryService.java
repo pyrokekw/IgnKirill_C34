@@ -8,5 +8,5 @@ public interface DeliveryService {
        System.out.println("Пользователь " + user.getLogin() + " забрал заказ: " + user.getOrder() + " из окна");
    }
 
-   void deliveryToHome(User user);
+   void deliveryOrder(User user);
 }
