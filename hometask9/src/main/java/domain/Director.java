@@ -25,6 +25,10 @@ public class Director extends Employee{
     @Override
     public String toString() {
         return "Director{" +
-                "subordinates=" + Arrays.toString(subordinates) + '}';
+                "firstName='" + this.getFirstName() + '\'' +
+                ", lastName='" + this.getLastName() + '\'' +
+                ", experience=" + this.getExperience() +
+                ", position=" + this.getPosition() +
+                " subordinates=" + Arrays.toString(subordinates) + '}';
     }
 }
