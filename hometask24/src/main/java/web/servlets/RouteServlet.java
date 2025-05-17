@@ -58,13 +58,6 @@ public class RouteServlet extends HttpServlet {
         }
     }
 
-    private void showHelp(PrintWriter out) {
-        out.println("Routes Service API Help:");
-        out.println("To add route:    /routes?action=add&name=NAME&desc=DESC&length=LENGTH");
-        out.println("To list routes:  /routes?action=list");
-        out.println("To vote:         /routes?action=vote&id=ROUTE_ID");
-    }
-
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.setContentType("text/plain");
@@ -82,8 +75,6 @@ public class RouteServlet extends HttpServlet {
                 case "vote":
                     handleVote(req, out);
                     break;
-                default:
-                    showHelp(out);
             }
         } catch (SQLException e) {
             out.println("Error: " + e.getMessage());
