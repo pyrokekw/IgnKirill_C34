@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Agency</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+        <a class="navbar-brand" href="#">Travel</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">Главная</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#tours">Туры</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">О нас</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">Контакты</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<div class="bg-light p-5 mb-4">
+    <div class="container text-center">
+        <h1 class="display-4">Путешествуйте с нами!</h1>
+        <p class="lead">Лучшие туры по доступным ценам</p>
+        <a href="#tours" class="btn btn-primary btn-lg">Выбрать тур</a>
+    </div>
+</div>
+
+
+<div id="tours" class="container mb-5">
+    <h2 class="text-center mb-4">Популярные туры</h2>
+    <div class="row">
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img src="https://avatars.mds.yandex.net/i?id=c427997804c0d0bbbc6fb09bb037be23_l-5194765-images-thumbs&n=13" class="card-img-top" alt="Турция">
+                <div class="card-body">
+                    <h5 class="card-title">Турция</h5>
+                    <p class="card-text">Отдых на лучших курортах Турции с перелетом и отелем.</p>
+                    <p class="fw-bold">от 4 500 BYN</p>
+                    <a href="#" class="btn btn-primary">Подробнее</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img src="https://i.pinimg.com/originals/ad/ea/97/adea97be5eea10228984114700f9ff88.jpg" class="card-img-top" alt="Тайланд">
+                <div class="card-body">
+                    <h5 class="card-title">Тайланд</h5>
+                    <p class="card-text">Экзотический отдых на пляжах Пхукета и Самуи.</p>
+                    <p class="fw-bold">от 6 500 BYN</p>
+                    <a href="#" class="btn btn-primary">Подробнее</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img src="https://i.pinimg.com/originals/a7/9d/42/a79d428ec558f95a1cd081dfaf1016e2.jpg" class="card-img-top" alt="Италия">
+                <div class="card-body">
+                    <h5 class="card-title">Италия</h5>
+                    <p class="card-text">Экскурсионные туры по самым красивым городам Италии.</p>
+                    <p class="fw-bold">от 5 500 BYN</p>
+                    <a href="#" class="btn btn-primary">Подробнее</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="about" class="bg-light py-5">
+    <div class="container">
+        <h2 class="text-center mb-4">О нашей компании</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <p>Мы работаем на туристическом рынке более 10 лет и помогаем нашим клиентам находить лучшие варианты для отдыха.</p>
+                <p>Наши преимущества:</p>
+                <ul>
+                    <li>Гарантия лучшей цены</li>
+                    <li>Опытные менеджеры</li>
+                    <li>Индивидуальный подход</li>
+                    <li>Круглосуточная поддержка</li>
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <img src="https://mig.pics/x/uploads/posts/2022-09/1663642620_53-mykaleidoscope-ru-p-uspeshnie-molodie-predprinimateli-emotsii-60.jpg" class="img-fluid rounded" alt="Наша команда">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="contact" class="container py-5">
+    <h2 class="text-center mb-4">Контакты</h2>
+    <div class="row">
+        <div class="col-md-6">
+            <h5>Наш офис</h5>
+            <p>г. Минск, ул. Туристическая, 42</p>
+            <p>Пн-Пт: 9:00 - 18:00</p>
+            <h5 class="mt-4">Телефон</h5>
+            <p>+375 (33) 123-45-67</p>
+            <h5 class="mt-4">Email</h5>
+            <p>info@travel.by</p>
+        </div>
+        <div class="col-md-6">
+            <h5>Оставьте заявку</h5>
+            <form>
+                <div class="mb-3">
+                    <label for="name" class="form-label">Ваше имя</label>
+                    <input type="text" class="form-control" id="name" required>
+                </div>
+                <div class="mb-3">
+                    <label for="phone" class="form-label">Телефон</label>
+                    <input type="tel" class="form-control" id="phone" required>
+                </div>
+                <div class="mb-3">
+                    <label for="message" class="form-label">Сообщение</label>
+                    <textarea class="form-control" id="message" rows="3"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Отправить</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<footer class="bg-dark text-white py-4">
+    <div class="container text-center">
+        <p>© 2020 Travel. Все права защищены.</p>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
