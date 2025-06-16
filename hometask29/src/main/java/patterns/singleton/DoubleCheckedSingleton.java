@@ -10,9 +10,8 @@ public class DoubleCheckedSingleton {
     }
 
     public static DoubleCheckedSingleton getInstance(String value) {
-        DoubleCheckedSingleton res = instance;
-        if (res != null) {
-            return res;
+        if (instance != null) {
+            return instance;
         }
         synchronized (DoubleCheckedSingleton.class) {
             if (instance == null) {
