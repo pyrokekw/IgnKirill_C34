@@ -35,20 +35,4 @@ public class EmployeeBuilder {
         Employee emp = new Employee(this);
         return emp;
     }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public int getYearsOld() {
-        return yearsOld;
-    }
-
-    public double getSalary() {
-        return salary;
-    }
 }
