@@ -13,5 +13,16 @@
         <c:forEach var="car" items="${cars}">
         <li><c:out value="${car}"/></li>
             </c:forEach>
+    </ul>
+
+    <br><br>
+
+    <%
+    List<Car> cars = (List<Car>) request.getAttribute("cars");
+    for (Car car : cars) {
+        out.println(car);
+    }
+    %>
+
 </body>
 </html>
