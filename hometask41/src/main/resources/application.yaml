@@ -1,0 +1,8 @@
+my:
+  text: "some text"
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
