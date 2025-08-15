@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="#{app.title}">Film Library</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .film-form { margin-bottom: 30px; padding: 20px; border: 1px solid #ddd; }
+        .film-table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        .film-table th, .film-table td { border: 1px solid #ddd; padding: 8px; }
+        .film-table th { background-color: #f2f2f2; }
+        .error { color: red; font-size: 0.9em; }
+        .language-switcher { margin-top: 20px; }
+    </style>
+</head>
+<body>
+<h1 th:text="#{app.title}">Film Library</h1>
+
+<div class="film-form">
+    <h2 th:text="#{film.add}">Add Film</h2>
+    <form th:action="@{/films}" th:object="${newFilm}" method="post">
+        <div>
+            <label th:text="#{film.title}">Title:</label><br>
+            <input type="text" th:field="*{title}">
+            <span class="error" th:if="${#fields.hasErrors('title')}"
+                  th:errors="*{title}"></span>
+        </div>
+
+        <div>
+            <label th:text="#{film.year}">Year:</label><br>
+            <input type="number" th:field="*{year}">
+            <span class="error" th:if="${#fields.hasErrors('year')}"
+                  th:errors="*{year}"></span>
+        </div>
+
+        <div>
+            <label th:text="#{film.director}">Director:</label><br>
+            <input type="text" th:field="*{director}">
+            <span class="error" th:if="${#fields.hasErrors('director')}"
+                  th:errors="*{director}"></span>
+        </div>
+
+        <button type="submit" th:text="#{film.add}">Add Film</button>
+    </form>
+</div>
+
+<h2 th:text="#{film.list}">Film List</h2>
+<table class="film-table">
+    <thead>
+    <tr>
+        <th th:text="#{film.title}">Title</th>
+        <th th:text="#{film.year}">Year</th>
+        <th th:text="#{film.director}">Director</th>
+        <th th:text="#{film.actions}">Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="film : ${films}">
+        <td th:text="${film.title}"></td>
+        <td th:text="${film.year}"></td>
+        <td th:text="${film.director}"></td>
+        <td>
+            <form th:action="@{/films/delete/{id}(id=${film.id})}" method="post">
+                <button type="submit" th:text="#{film.delete}">Delete</button>
+            </form>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<div class="language-switcher">
+    <a href="?lang=en">English</a> |
+    <a href="?lang=ru">Русский</a>
+</div>
+</body>
+</html>
