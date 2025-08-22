@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Film Library</title>
+</head>
+<body>
+
+<div class="search-form">
+    <form th:action="@{/films}" method="get">
+        <input type="text" name="search" th:value="${searchTitle}"
+               placeholder="Поиск по точному названию">
+        <button type="submit">Найти</button>
+        <a th:href="@{/films}">Показать все</a>
+    </form>
+
+    <div th:if="${searchResult}" th:text="${searchResult}"
+         th:class="${searchResult.contains('не найден')} ? 'search-error' : 'search-result'">
+    </div>
+</div>
+
+<div class="film-form">
+    <h2>Добавить новый фильм</h2>
+    <form th:action="@{/films}" th:object="${newFilm}" method="post">
+        <div>
+            <label>Название:</label><br>
+            <input type="text" th:field="*{title}">
+            <span class="error" th:if="${#fields.hasErrors('title')}"
+                  th:errors="*{title}"></span>
+        </div>
+
+        <div>
+            <label>Год:</label><br>
+            <input type="number" th:field="*{year}">
+            <span class="error" th:if="${#fields.hasErrors('year')}"
+                  th:errors="*{year}"></span>
+        </div>
+
+        <div>
+            <label>Режиссер:</label><br>
+            <input type="text" th:field="*{director}">
+            <span class="error" th:if="${#fields.hasErrors('director')}"
+                  th:errors="*{director}"></span>
+        </div>
+
+        <button type="submit">Добавить фильм</button>
+    </form>
+</div>
+
+<h2>Список фильмов</h2>
+<table class="film-table">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Название</th>
+        <th>Год</th>
+        <th>Режиссер</th>
+        <th>Действия</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="film : ${films}">
+        <td th:text="${film.id}"></td>
+        <td th:text="${film.title}"></td>
+        <td th:text="${film.year}"></td>
+        <td th:text="${film.director}"></td>
+        <td>
+            <form th:action="@{/films/delete/{id}(id=${film.id})}" method="post">
+                <button type="submit">Удалить</button>
+            </form>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
